@@ -41,16 +41,19 @@ sudo apt-get install -y dotnet-sdk-3.1
 dotnet --version
 ```
 
-## CLoning sample application 
+##  creating sample application 
 
 ```
-sudo apt install git -y
-git clone https://github.com/oktadeveloper/okta-netcore3-deploy-linux-example okta
+dotnet new webApp -o myWebApp --no-https
+root@bdcfba4c6e6e:/myWebApp# cd /myWebApp/
+root@bdcfba4c6e6e:/myWebApp# ls
+Pages  Program.cs  Properties  Startup.cs  appsettings.Development.json  appsettings.json  bin  myWebApp.csproj  obj  wwwroot
+
 ```
 ## Building dotnet application 
 
 ```
-cd okta
+cd myWebApp
 dotnet build
 ```
 ### Output should be like this 
@@ -75,4 +78,9 @@ dotnet run
 dotnet watch run  --no-restore --urls http://0.0.0.0:5000
 ```
 
+## another method to run dll file 
+
+```
+dotnet /myWebApp/bin/Debug/netcoreapp3.1/myWebApp.dll  --urls  http://0.0.0.0:5000
+```
 
